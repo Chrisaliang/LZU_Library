@@ -20,4 +20,6 @@ public interface IUserLoginView {
     void loginErr();
 
     void loginSuccess(String response);
+
+//    void requestFocus();
 }

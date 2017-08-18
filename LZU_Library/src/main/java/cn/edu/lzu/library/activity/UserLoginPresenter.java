@@ -11,6 +11,10 @@ import cn.edu.lzu.library.dao.user.UserDao;
 import cn.edu.lzu.library.dao.user.UserSQLiteOpenHelper;
 import cn.edu.lzu.library.protocol.UserCenterProtocol;
 import cn.edu.lzu.library.utils.UIUtils;
+import io.reactivex.Observable;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.Call;
 
 /**
@@ -80,9 +84,8 @@ public class UserLoginPresenter {
 
     private void actionLogin(String userName, String password) {
         User mUser = new User(userName, password);
-        new Thread() {
-            @Override
-            public void run() {
+
+        Observable.create((ObservableOnSubscribe<String>) e ->
                 UserCenterProtocol.login(mUser, new StringCallback() {
 
                     @Override
@@ -97,17 +100,20 @@ public class UserLoginPresenter {
                         UserCenter userCenter = new Gson().fromJson(response, UserCenter.class);
                         int result = userCenter.result;
                         if (result == 0) {
-                            UIUtils.runOnUIThread(() -> userLoginView.loginErr());
+                            e.onError(null);
+//                            UIUtils.runOnUIThread(() -> userLoginView.loginErr());
 
                         } else {
                             // 验证成功
                             saveRecord(mUser, response);
-                            userLoginView.loginSuccess(response);
+                            e.onNext(response);
                         }
                     }
-                });
-            }
-        }.start();
+                })).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(response -> userLoginView.loginSuccess(response),
+                        throwable -> userLoginView.loginErr());
+
+
     }
 
     private boolean isUserNameValid(String userName) {

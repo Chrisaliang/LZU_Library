@@ -252,6 +252,7 @@ public class UserLoginActivity extends AppCompatActivity implements LoaderCallba
         mUserName.setError(getString(R.string.error_invalid_user_name));
     }
 
+
     @Override
     public void loginErr() {
         // 验证失败
