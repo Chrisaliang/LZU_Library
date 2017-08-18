@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserCenterActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navigation_indigo"
+        android:title="@string/user_center"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!-- <TextView
+             style="@style/NormalTextStyle"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:text="个人中心"
+             android:textColor="@color/white_text" />-->
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/action_indigo"
+        android:orientation="vertical">
+
+        <!--android:layout_gravity="right"-->
+        <TextView
+            android:id="@+id/tv_edit"
+            style="@style/WhiteTextStyle"
+            android:layout_margin="8dp"
+            android:gravity="end"
+            android:text="@string/edit"
+            android:textSize="14sp" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_user_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/tv_edit"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/ic_launcher"
+            android:padding="3dp" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            style="@style/WhiteTextStyle"
+            android:layout_below="@id/iv_user_icon"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_name"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/WhiteTextStyle"
+                    android:text="@string/display_name" />
+
+                <TextView
+                    style="@style/WhiteTextStyle"
+                    android:text="@string/email" />
+
+                <TextView
+                    style="@style/WhiteTextStyle"
+                    android:text="@string/phone_number" />
+
+                <TextView
+                    style="@style/WhiteTextStyle"
+                    android:text="@string/department" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_display_name"
+                    style="@style/WhiteTextStyle" />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    style="@style/WhiteTextStyle" />
+
+                <TextView
+                    android:id="@+id/tv_phone_number"
+                    style="@style/WhiteTextStyle" />
+
+                <TextView
+                    android:id="@+id/tv_department"
+                    style="@style/WhiteTextStyle" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_red_selector"
+            android:text="@string/logout"
+            android:textColor="@color/white_text" />
+    </RelativeLayout>
+
+
+</LinearLayout>

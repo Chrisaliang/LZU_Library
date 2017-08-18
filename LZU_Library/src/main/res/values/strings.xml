@@ -1,0 +1,154 @@
+<resources>
+    <string name="app_name">兰大·求索</string>
+    <string name="title_activity_guide">GuideActivity</string>
+    <string name="et_want">今天我想看的书是:</string>
+    <string name="btn_me">我</string>
+    <string name="onLoading">加载中...</string>
+    <string name="net_error">请珍惜我兰没网的日子</string>
+
+    <string name="network_error">网络不可用，如果继续，请先设置网络！</string>
+    <string name="network_notice_msg">网络状态提示信息！</string>
+    <string name="setting">设置</string>
+    <string name="continue_go">继续</string>
+    <string name="on_cancel">取消</string>
+    <string name="network_onlyGPRS">多图慎点,当前使用数据流量,是否继续?</string>
+
+    <string name="book_empty">我兰都被你看尽了</string>
+    <string name="housemaster">堂主</string>
+    <string name="lib_search">馆藏查询</string>
+    <string name="clear_history">清除历史记录</string>
+    <string name="user_center">个人中心</string>
+    <string name="user_login">用户登录</string>
+    <string name="edit">修改</string>
+    <string name="doubleClick2Exit">再按一次退出程序</string>
+    <string name="users">用户</string>
+
+    <string name="housemaster_album">堂主风采</string>
+    <string name="library_hall">图书馆大厅</string>
+    <string name="characteristic_resource">特色及试用资源</string>
+    <string name="new_book_recommend">新书推荐</string>
+    <string name="hall_notify">通知公告</string>
+    <string name="class_vote">班级投票</string>
+
+    <string-array name="tab_names">
+        <item>堂主</item>
+        <item>首页</item>
+        <item>最新动态</item>
+        <item>服务</item>
+        <item>分类</item>
+    </string-array>
+
+    <string-array name="hall_title">
+        <item>堂主风采</item>
+        <item>图书馆大厅</item>
+        <item>特色及试用资源</item>
+        <item>新书推荐</item>
+        <item>通知公告</item>
+        <item>班级投票</item>
+    </string-array>
+
+    <!--todo 嘿嘿嘿-->
+    <string-array name="hall_pic">
+        <item>housemaster_album</item>
+        <item>library_hall</item>
+        <item>characteristic_resource</item>
+        <item>new_book_recommendation</item>
+        <item>hall_notify</item>
+        <item>class_vote</item>
+    </string-array>
+
+    <string name="title_activity_user_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_user_name">借阅卡账号</string>
+    <string name="prompt_password">借阅卡密码</string>
+    <string name="action_sign_in">登 录</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_user_name">请输入正确的借阅证号(校园卡号+1)</string>
+    <string name="error_invalid_password">密码无效</string>
+    <string name="error_incorrect_password">密码不正确</string>
+    <string name="error_field_required">请填写此项</string>
+    <string name="permission_rationale">"提供电子邮件需要联系人权限。"</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="display_name">真实姓名:</string>
+    <string name="email">电子邮箱:</string>
+    <string name="phone_number">电话号码:</string>
+    <string name="department">院系部门:</string>
+    <string name="logout">退出账户</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="new_function">新功能正在紧张开启中…</string>
+
+</resources>
