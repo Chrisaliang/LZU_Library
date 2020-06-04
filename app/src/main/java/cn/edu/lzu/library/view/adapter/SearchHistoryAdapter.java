@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 import cn.edu.lzu.library.module.dao.history.History;
 import cn.edu.lzu.library.module.dao.history.HistoryDAO;
@@ -73,15 +71,14 @@ public class SearchHistoryAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        @BindView(R.id.iv_type)
         ImageView ivType;
-        @BindView(R.id.tv_history)
         TextView tvHistory;
-        @BindView(R.id.btn_clear_item)
         ImageButton btnClearItem;
 
         ViewHolder(View view) {
-            ButterKnife.bind(this, view);
+            ivType = view.findViewById(R.id.iv_type);
+            tvHistory = view.findViewById(R.id.tv_history);
+            btnClearItem = view.findViewById(R.id.btn_clear_item);
         }
     }
 }

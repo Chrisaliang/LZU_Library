@@ -36,6 +36,7 @@
             style="@style/WhiteTextStyle"
             android:layout_margin="8dp"
             android:gravity="end"
+            android:onClick="onEditClicked"
             android:text="@string/edit"
             android:textSize="14sp" />
 
@@ -114,6 +115,7 @@
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
+            android:onClick="onLogoutClicked"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/btn_red_selector"

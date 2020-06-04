@@ -6,28 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 import cn.edu.lzu.library.view.ui.view.ShowPager;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.content_fill)
     ConstraintLayout contentFill;
-    private ShowPager showPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        ButterKnife.bind(this);
+        toolbar = findViewById(R.id.toolbar);
+        contentFill = findViewById(R.id.content_fill);
 
         initView();
 
-        showPager = new ShowPager(this) {
+        ShowPager showPager = new ShowPager(this) {
             @Override
             protected View onCreateSuccessView() {
                 return fillLayout();

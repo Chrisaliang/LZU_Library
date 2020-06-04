@@ -7,22 +7,19 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 
 public class SearchHtmlActivity extends AppCompatActivity {
 
-    @BindView(R.id.wb_search)
     WebView wbSearch;
-    @BindView(R.id.tb_search)
     Toolbar tbSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_html);
-        ButterKnife.bind(this);
+        wbSearch = findViewById(R.id.wb_search);
+        tbSearch = findViewById(R.id.tb_search);
 
         setSupportActionBar(tbSearch);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

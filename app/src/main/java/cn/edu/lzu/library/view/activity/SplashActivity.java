@@ -21,7 +21,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        RelativeLayout rlSplash = (RelativeLayout) findViewById(R.id.rl_splash);
+        RelativeLayout rlSplash = findViewById(R.id.rl_splash);
         //旋转动画
         RotateAnimation ra = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         //渐变动画

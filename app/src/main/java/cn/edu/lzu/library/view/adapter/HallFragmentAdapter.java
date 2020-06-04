@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 import cn.edu.lzu.library.utils.UIUtils;
 
@@ -81,16 +79,15 @@ public class HallFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.iv_pic)
         ImageView ivPic;
-        @BindView(R.id.tv_title)
         TextView tvTitle;
-        @BindView(R.id.ll_viewHolder)
         LinearLayout llViewHolder;
 
         ViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, view);
+            ivPic = view.findViewById(R.id.iv_pic);
+            tvTitle = view.findViewById(R.id.tv_title);
+            llViewHolder = view.findViewById(R.id.ll_viewHolder);
         }
     }
 }

@@ -63,6 +63,10 @@ android {
 //            signingConfig signingConfig.debug
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -81,9 +85,8 @@ dependencies {
     implementation 'com.zhy:okhttputils:2.6.2'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.facebook.fresco:fresco:1.2.0'
-    implementation 'com.jakewharton:butterknife:8.4.0'
     testImplementation 'junit:junit:4.12'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:3.0.0"
 }

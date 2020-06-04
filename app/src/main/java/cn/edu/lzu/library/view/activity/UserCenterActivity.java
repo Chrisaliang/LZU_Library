@@ -11,9 +11,6 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import cn.edu.lzu.library.R;
 import cn.edu.lzu.library.module.dao.user.UserCenter;
 import cn.edu.lzu.library.presenter.UserCenterPresenter;
@@ -24,23 +21,13 @@ import cn.edu.lzu.library.utils.ToastUtils;
  */
 public class UserCenterActivity extends AppCompatActivity implements IUserCenterView {
 
-    @BindView(R.id.tb_me)
     Toolbar tbMe;
-    @BindView(R.id.tv_user_name)
     TextView tvUserName;
-    @BindView(R.id.tv_display_name)
     TextView tvDisplayName;
-    @BindView(R.id.tv_email)
     TextView tvEmail;
-    @BindView(R.id.tv_phone_number)
     TextView tvPhoneNumber;
-    @BindView(R.id.tv_department)
     TextView tvDepartment;
-    @BindView(R.id.tv_edit)
-    TextView tvEdit;
-    @BindView(R.id.btn_logout)
     Button btnLogout;
-    @BindView(R.id.iv_user_icon)
     SimpleDraweeView ivUserIcon;
 
     UserCenterPresenter presenter;
@@ -54,7 +41,14 @@ public class UserCenterActivity extends AppCompatActivity implements IUserCenter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_center);
-        ButterKnife.bind(this);
+        tbMe = findViewById(R.id.tb_me);
+        tvUserName = findViewById(R.id.tv_user_name);
+        tvDisplayName = findViewById(R.id.tv_display_name);
+        tvEmail = findViewById(R.id.tv_email);
+        tvPhoneNumber = findViewById(R.id.tv_phone_number);
+        tvDepartment = findViewById(R.id.tv_department);
+        btnLogout = findViewById(R.id.btn_logout);
+        ivUserIcon = findViewById(R.id.iv_user_icon);
 
         presenter = new UserCenterPresenter(this);
         initView();
@@ -95,7 +89,6 @@ public class UserCenterActivity extends AppCompatActivity implements IUserCenter
         tbMe.setNavigationOnClickListener(v -> finish());
     }
 
-    @OnClick(R.id.btn_logout)
     public void onLogoutClicked() {
         if (isLogin) {
             // 1. 首先修改数据库中的内容
@@ -121,7 +114,6 @@ public class UserCenterActivity extends AppCompatActivity implements IUserCenter
         btnLogout.setText(R.string.action_sign_in);
     }
 
-    @OnClick(R.id.tv_edit)
     public void onEditClicked() {
         // TODO: 2017/4/18 修改个人信息
         ToastUtils.show(this, "修改个人信息");

@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 *.iml
-.idea
+.idea/
 .gradle
 /local.properties
 /.idea/workspace.xml
@@ -10,4 +10,3 @@
 /captures
 .externalNativeBuild
 keyStore.gradle
-chrisaliang.keystore

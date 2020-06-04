@@ -17,13 +17,11 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
-import cn.edu.lzu.library.view.adapter.SearchHistoryAdapter;
 import cn.edu.lzu.library.module.dao.history.HistoryDAO;
 import cn.edu.lzu.library.module.dao.history.HistorySQLiteOpenHelper;
 import cn.edu.lzu.library.utils.UIUtils;
+import cn.edu.lzu.library.view.adapter.SearchHistoryAdapter;
 
 /**
  * 搜索界面
@@ -31,15 +29,10 @@ import cn.edu.lzu.library.utils.UIUtils;
  */
 public class SearchBookActivity extends AppCompatActivity {
 
-    @BindView(R.id.tb_search)
     Toolbar tbSearch;
-    @BindView(R.id.sv_content)
     SearchView svContent;
-    @BindView(R.id.wb_content)
     WebView wbContent;
-    @BindView(R.id.pb)
     ProgressBar pb;
-    @BindView(R.id.lv_history)
     ListView lvHistory;
 
     private HistorySQLiteOpenHelper helper = new HistorySQLiteOpenHelper(this);
@@ -48,13 +41,12 @@ public class SearchBookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_book);
-        ButterKnife.bind(this);
-
-        initView();
-    }
-
-    private void initView() {
         // 初始化控件
+        tbSearch = findViewById(R.id.tb_search);
+        svContent = findViewById(R.id.sv_content);
+        wbContent = findViewById(R.id.wb_content);
+        pb = findViewById(R.id.pb);
+        lvHistory = findViewById(R.id.lv_history);
         setSupportActionBar(tbSearch);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

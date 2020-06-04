@@ -6,13 +6,11 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -22,16 +20,11 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 import cn.edu.lzu.library.module.dao.user.User;
 import cn.edu.lzu.library.presenter.UserLoginPresenter;
@@ -59,26 +52,12 @@ public class UserLoginActivity extends AppCompatActivity implements LoaderCallba
     private static final String TAG = UserLoginActivity.class.getSimpleName();
 
     // UI references.
-    @BindView(R.id.login_progress)
     ProgressBar mProgressView;
-
-    @BindView(R.id.tb_login)
     Toolbar tbLogin;
-    @BindView(R.id.user_icon)
-    ImageView userIcon;
 
-    @BindView(R.id.user_name)
     AutoCompleteTextView mUserName;
-    @BindView(R.id.password)
     EditText mPasswordView;
-    @BindView(R.id.user_name_sign_in_button)
     Button mUserNameSignInButton;
-
-    @BindView(R.id.user_name_login_form)
-    LinearLayout userNameLoginForm;
-
-    @BindView(R.id.login_form)
-    ScrollView mLoginFormView;
 
     UserLoginPresenter presenter;
 
@@ -90,7 +69,13 @@ public class UserLoginActivity extends AppCompatActivity implements LoaderCallba
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
-        ButterKnife.bind(this);
+
+        mProgressView = findViewById(R.id.login_progress);
+        tbLogin = findViewById(R.id.tb_login);
+        mUserName = findViewById(R.id.user_name);
+        mPasswordView = findViewById(R.id.password);
+        mUserNameSignInButton = findViewById(R.id.user_name_sign_in_button);
+
         initView();
 
         presenter = new UserLoginPresenter(this);

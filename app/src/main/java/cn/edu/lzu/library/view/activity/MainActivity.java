@@ -7,34 +7,29 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 import cn.edu.lzu.library.view.adapter.MainFragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.tb)
     Toolbar toolbar;
-    @BindView(R.id.indicate)
     TabLayout indicate;
-    @BindView(R.id.activity_main)
-    CoordinatorLayout activityMain;
-    @BindView(R.id.vp_main)
     ViewPager viewpager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+        toolbar = findViewById(R.id.tb);
+        indicate = findViewById(R.id.indicate);
+        viewpager = findViewById(R.id.vp_main);
 
         initToolBar();
 

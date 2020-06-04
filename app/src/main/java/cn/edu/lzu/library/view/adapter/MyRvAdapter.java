@@ -4,14 +4,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.edu.lzu.library.R;
 
 /**
@@ -50,14 +47,11 @@ public class MyRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.icon)
-        ImageView icon;
-        @BindView(R.id.infos)
         TextView infos;
 
         MyViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, view);
+            infos = view.findViewById(R.id.infos);
         }
     }
 }
